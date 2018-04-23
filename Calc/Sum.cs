@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace Calc
 {
-    public class Sum
+    
+    internal class Sum
     {
+        internal int number1 { get; set; }
 
-        public int number1;
+        internal int number2 { get; set; }
 
-        public int number2;
+        public String challenge { get; set; }
 
-        public String sum;
-        
-        public int outcome;
+        internal int outcome { get; set; }
     }
 }

@@ -8,8 +8,7 @@ namespace Calc
 {
     public class GenerateChallenge
     {
-      
-        private Sum GetSum()
+        internal Sum GetSum()
         {
             Sum sum = new Sum();
             sum.number1 = GetRandomNumber();
@@ -22,7 +21,7 @@ namespace Calc
             {
                 case (0):
                     sum.outcome = sum.number1 * sum.number2;
-                    sum.sum = sum.number1 + " * " + sum.number2 + " = ";
+                    sum.challenge = sum.number1 + " * " + sum.number2 + " = ";
                     break;
 
                 case (1):
@@ -31,18 +30,20 @@ namespace Calc
 
                 case (2):
                     sum.outcome = sum.number1 + sum.number2;
-                    sum.sum = sum.number1 + " + " + sum.number2 + " = ";
+                    sum.challenge = sum.number1 + " + " + sum.number2 + " = ";
                     break;
 
                 case (3):
                     sum.outcome = sum.number1 - sum.number2;
-                    sum.sum = sum.number1 + " - " + sum.number2 + " = ";
+                    sum.challenge = sum.number1 + " - " + sum.number2 + " = ";
                     break;
 
                 default:
                     break;
             }
-            return sum;
+            
+                return sum;
+           
         }
 
         private int GetRandomNumber()
@@ -65,7 +66,7 @@ namespace Calc
 
             sum.outcome = (int)outcome;
 
-            sum.sum = sum.number1 + " / " + sum.number2 + " = ";
+            sum.challenge = sum.number1 + " / " + sum.number2 + " = ";
 
             return sum;
         }

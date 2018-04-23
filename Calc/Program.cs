@@ -8,8 +8,11 @@ namespace Calc
 {
     class Program
     {
+        
         static void Main(string[] args)
         {
+            //var p = new Program();
+            //p.MainMenu();
             MainMenu();
         }
 
@@ -23,11 +26,13 @@ namespace Calc
 
         static void StartGame()
         {
-            Sum Challenge = new Sum();
+            GenerateChallenge challenge = new GenerateChallenge();      
+            Sum Challenge = challenge.GetSum();
 
-            Console.WriteLine("Challenge is:", Challenge.sum);
-            Console.WriteLine("Outcome is:", Challenge.sum);
+            Console.WriteLine($"Challenge is: {Challenge.challenge}");
+            Console.WriteLine($"Outcome is: {Challenge.outcome}");
             Console.ReadLine();
+            StartGame();
 
         }
     
