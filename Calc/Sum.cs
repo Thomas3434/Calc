@@ -15,6 +15,6 @@ namespace Calc
 
         public String challenge { get; set; }
 
-        internal int outcome { get; set; }
+        internal int solution { get; set; }
     }
 }

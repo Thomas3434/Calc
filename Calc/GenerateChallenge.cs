@@ -20,7 +20,7 @@ namespace Calc
             switch (randomOperator)
             {
                 case (0):
-                    sum.outcome = sum.number1 * sum.number2;
+                    sum.solution = sum.number1 * sum.number2;
                     sum.challenge = sum.number1 + " * " + sum.number2 + " = ";
                     break;
 
@@ -29,12 +29,12 @@ namespace Calc
                     break;
 
                 case (2):
-                    sum.outcome = sum.number1 + sum.number2;
+                    sum.solution = sum.number1 + sum.number2;
                     sum.challenge = sum.number1 + " + " + sum.number2 + " = ";
                     break;
 
                 case (3):
-                    sum.outcome = sum.number1 - sum.number2;
+                    sum.solution = sum.number1 - sum.number2;
                     sum.challenge = sum.number1 + " - " + sum.number2 + " = ";
                     break;
 
@@ -64,7 +64,7 @@ namespace Calc
                 outcome = sum.number1 / sum.number2;
             }
 
-            sum.outcome = (int)outcome;
+            sum.solution = (int)outcome;
 
             sum.challenge = sum.number1 + " / " + sum.number2 + " = ";
 
