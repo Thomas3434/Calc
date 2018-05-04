@@ -11,59 +11,28 @@ namespace Calc
         
         static void Main(string[] args)
         {
-            //var p = new Program();
-            //p.MainMenu();
-            MainMenu();
+            var p = new Program();
+            p.MainMenu();
         }
 
-        static void MainMenu()
+        internal void MainMenu()
         {
-            Console.Clear();
+            //  Console.Clear(); 
+            // Comment the above part in again once the Game.NextChallenge method TO-DO's are completed 
             Console.WriteLine("Lets do some Calc!");
+            Settings();
+        }
+
+        static void Settings()
+        {
+            Console.WriteLine("[This is a placeholder difficulty menu]");
+            Console.WriteLine("Press Enter key...");
+            Console.ReadLine();
             //TO-DO: functionality to choose difficulty
-            StartGame();
+            Game start = new Game();
+            start.StartGame();
         }
 
-        static void StartGame()
-        {
-            GenerateChallenge challenge = new GenerateChallenge();      
-            Sum Challenge = challenge.GetSum();
-
-            Console.Write($"{Challenge.challenge}");
-
-            int inputAnswer;
-            if (int.TryParse(Console.ReadLine(), out inputAnswer))
-            {
-                Compare(inputAnswer, Challenge.solution);
-            }
-            else
-            {
-                Console.WriteLine("That is not a valid input.");
-                return;
-            }
-        }
-
-        static void Compare(int answer, int solution)
-        {
-            int left = Console.CursorLeft;
-            int top = Console.CursorTop;
-            Console.SetCursorPosition(left + 13, top - 1);
-
-            if (answer == solution)
-            {
-                Console.Write("Correct!");
-                Console.WriteLine();
-                Console.WriteLine();
-                StartGame();
-            }
-
-            else
-            {
-                Console.Write($"False! The correct answer is {solution}.");
-                Console.WriteLine();
-                Console.WriteLine();
-                StartGame();
-            }
-        }  
+       
     }
 }
