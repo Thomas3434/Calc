@@ -30,7 +30,7 @@ namespace Calc
             Console.ReadLine();
             //TO-DO: functionality to choose difficulty
             Game start = new Game();
-            start.StartGame();
+            start.ProvideChallenge();
         }
 
        
