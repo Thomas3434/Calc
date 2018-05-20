@@ -17,24 +17,27 @@ namespace Calc
             {
                 GenerateChallenge challenge = new GenerateChallenge();
                 Sum Challenge = challenge.GetSum();
-
                 Console.Write($"{Challenge.challenge}");
+                ObtainAnswer(Challenge.solution);
+            }
+            GameSummary();
+        }
 
+        internal void ObtainAnswer(int solution)
+            { 
                 int inputAnswer;
                 if (int.TryParse(Console.ReadLine(), out inputAnswer))
                 {
-                    Compare(inputAnswer, Challenge.solution);
+                    Compare(inputAnswer, solution);
                 }
                 else
                 {
                     Console.WriteLine("That is not a valid input.");
-                    return;
+                    Console.Write("Try again: ");
+                    ObtainAnswer(solution);
                 }
-            }
-
-            GameSummary();    
-        }
-
+            }            
+        
         internal void Compare(int answer, int solution)
         {
             int left = Console.CursorLeft;
@@ -79,8 +82,5 @@ namespace Calc
             var p = new Program();
             p.MainMenu();
         }
-
-    
-        
     }
 }
