@@ -64,7 +64,13 @@ namespace Calc
 
         private Sum DivideCalc(Sum sum)
         {
-            double outcome = (double)sum.number1 / (double)sum.number2;
+            int mod = sum.number1 % sum.number2;
+            sum.number1 = sum.number1 - mod;
+
+            sum.solution = sum.number1 / sum.number2;
+            sum.challenge = sum.number1 + " / " + sum.number2 + " = ";
+
+           /* double outcome = (double)sum.number1 / (double)sum.number2;
 
             while ((outcome != Math.Floor(outcome)) || (sum.number1 == sum.number2))
             {
@@ -76,7 +82,7 @@ namespace Calc
             sum.solution = (int)outcome;
 
             sum.challenge = sum.number1 + " / " + sum.number2 + " = ";
-
+            */
             return sum;
         }
     }
